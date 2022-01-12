@@ -1,0 +1,18 @@
+.settings-section__background-image {
+  width: 65px;
+  height: 65px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  margin: 4px;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+  &:hover {
+    border: 1px solid red;
+    cursor: pointer;
+  }
+  &.active {
+    border: 1px solid red;
+  }
+}

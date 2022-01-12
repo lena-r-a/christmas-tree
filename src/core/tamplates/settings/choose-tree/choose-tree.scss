@@ -1,0 +1,30 @@
+.settings-div {
+  width: 100%;
+}
+
+.settings-section__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.settings-section__tree-image {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &.active {
+    border: 1px solid red;
+  }
+}

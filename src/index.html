@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="image/x-icon" href="./assets/images/favicon.ico" rel="shortcut icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <title>Christmas tree</title>
+</head>
+<body>
+  <audio src="" class="audio" muted="true"></audio>
+  <section class="filters displaynone">
+    <div class="toys-header">
+      <input type="search" class="search-input" autocomplete="off" placeholder="Искать по названию" autofocus="true">
+      <div class="choosed-amount"><span></span></div>
+    </div>
+    <div class="filters__value filter-box">
+      <h3 class="filters__value-title filter-title">Фильтры по значению</h3>
+      <div class="filters__value-container">
+        <div class="filters__value-shape filter-wrapper">
+          <span class="filter-span">Форма:</span> 
+          <button class="shape-button button ball" data-type="shape" data-id="шар"></button>
+          <button class="shape-button button bell" data-type="shape" data-id="колокольчик"></button>
+          <button class="shape-button button pine" data-type="shape" data-id="шишка"></button>
+          <button class="shape-button button snowflake" data-type="shape" data-id="снежинка"></button>
+          <button class="shape-button button figurine" data-type="shape" data-id="фигурка"></button>
+        </div>
+        <div class="filters__value-color filter-wrapper">
+          <span class="filter-span">Цвет:</span> 
+          <button class="color-button white button" data-type="color" data-id="белый"></button>
+          <button class="color-button yellow button" data-type="color" data-id="желтый"></button>
+          <button class="color-button red button" data-type="color" data-id="красный"></button>
+          <button class="color-button blue button" data-type="color" data-id="синий"></button>
+          <button class="color-button green button" data-type="color" data-id="зелёный"></button>
+        </div>
+        <div class="filters__value-size filter-wrapper">
+          <span class="filter-span">Размер:</span> 
+          <button class="size-button big button" data-type="size" data-id="большой"></button>
+          <button class="size-button average button" data-type="size" data-id="средний"></button>
+          <button class="size-button small button" data-type="size" data-id="малый"></button>
+        </div>
+        <div class="filters__value-favourite filter-wrapper">
+          <span class="filter-span">Только любимые:</span>
+          <label class="container-input">
+            <input type="checkbox" class="favorite-checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="filters__range filter-box">
+      <h3 class="filters__range-title filter-title">Фильтры по диапазону</h3>
+      <span class="filter-span">Количество экземпляров:</span>
+      <div class="filters_range-amount range-wrapper">
+        <div class="amount-from number-div">1</div>
+        <div id="slider-amount"></div>
+        <div class="amount-to number-div">12</div>
+      </div> 
+      <span class="filter-span">Год приобретения:</span>
+      <div class="filters_range-amount range-wrapper">
+        <div class="year-from number-div">1940</div>
+        <div id="slider-year"></div>
+        <div class="year-to number-div">2021</div>
+      </div> 
+    </div>
+    <div class="filters__sorting filter-box">
+      <h3 class="filters__sorting-title filter-title">Сортировка</h3>
+      <div class="filters__sorting-wrapper">
+        <div id="select"></div>
+        <button class="reset-button">Сбросить фильтры</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="app"></div>
+
+  <footer class="footer">
+    <a href="https://github.com/lena-r-a" class="github">GitHub</a>
+    <p>2021</p>
+    <a href="https://rs.school/js/" class="rs"></a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.tree-section {
+  width: 600px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  &__image {
+    display: block;
+    width: 500px;
+    height: 700px;
+  }
+}
+
+area {
+  cursor: pointer;
+}

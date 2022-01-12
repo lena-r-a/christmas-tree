@@ -1,0 +1,414 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.filter-box {
+  width: 30%;
+  background-color: rgba(25, 47, 45, 0.8);
+  border-radius: 20px;
+  padding: 0 15px 15px;
+}
+.filter-title {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.shape-button {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s all ease;
+  &.activeFilter {
+    background-color: #57b69e;
+  }
+  &.ball {
+    background-image: url('./assets/images/ball.svg');
+  }
+  &.bell {
+    background-image: url('./assets/images/bell.svg');
+  }
+  &.pine {
+    background-image: url('./assets/images/pine.svg');
+  }
+  &.snowflake {
+    background-image: url('./assets/images/snowflake.svg');
+  }
+  &.figurine {
+    background-image: url('./assets/images/bird_toy.svg');
+  }
+  &.star {
+    background-image: url('./assets/images/star.svg');
+  }
+}
+.shape-button:hover,
+.size-button:hover {
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.filter-span {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  margin-top: 15px;
+}
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+  width: 98%;
+  margin-bottom: 20px;
+}
+.color-button {
+  width: 35px;
+  height: 35px;
+  margin-left: 20px;
+  border: 3px solid transparent;
+  transition: 0.3s all ease;
+  &.activeFilter {
+    position: relative;
+  }
+  &.activeFilter::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 9px;
+    top: 3px;
+    width: 7px;
+    height: 15px;
+    border: solid rgb(70, 65, 65);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+.color-button:hover {
+  border: 3px solid rgb(158, 11, 35);
+  cursor: pointer;
+}
+.red {
+  background-color: red;
+}
+.white {
+  background-color: white;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
+.size-button {
+  margin-left: 20px;
+  border: 1px solid transparent;
+  transition: 0.3s all ease;
+  background-color: transparent;
+  background-image: url('./assets/images/ball.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s all ease;
+  &.activeFilter {
+    background-color: #57b69e;
+  }
+}
+.big {
+  width: 40px;
+  height: 40px;
+}
+.average {
+  width: 30px;
+  height: 30px;
+}
+.small {
+  width: 25px;
+  height: 25px;
+}
+/* custom checkbox */
+
+/* Customize the label (the container) */
+.container-input {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 22px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-input input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container-input:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-input input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-input input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-input .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* range filters */
+.range-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.number-div {
+  width: 10%;
+  padding: 5px;
+  text-align: center;
+  background-color: rgba(25, 47, 45, 0.9);
+  border: 1px solid #1E575F;
+  border-radius: 15px;
+  background-color: rgba(127, 208, 209, 0.3);
+}
+
+// /* custom range */
+.container-range{
+  position: relative;
+  pointer-events: none;
+  width: 70%;
+}
+
+/* custom select */
+$height: 35px;
+.select {
+  width: 90%;
+  position: relative;
+  &.open {
+    .select__dropdown {
+      display: block;
+    };
+    .select__input {
+      border-bottom: none;
+    }
+    .select__backdrop {
+      display: block;
+    }
+  }
+  &__backdrop{
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // z-index: -1;
+    display: none;
+  }
+  &__input {
+    background-color: rgba(127, 208, 209, 0.3);
+    border: solid 2px #82CFD0;
+    border-radius: 20px;
+    height: $height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-family: "Open Sans", sans-serif;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    border: solid 1px #82CFD0;
+    top: $height;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+    box-shadow: 2px 3px 5px #82CFD0;
+    display: none;
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #82CFD0;
+    &:hover {
+      background-color: #1E575F;
+      cursor: pointer;
+      transition: 0.15ms background-color ease-in;
+    }
+    &.selected {
+      background-color: #1E575F;
+    }
+  }
+  
+}
+.reset-button {
+  width: 60%;
+  margin-bottom: 10px;
+  border: solid 2px #82CFD0;
+  border-radius: 20px;
+  height: $height;
+  background-color: rgba(127, 208, 209, 0.3);
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  &:hover {
+    background-color: #1E575F;
+    cursor: pointer;
+    transition: 0.15ms background-color ease-in;
+  }
+}
+.filters__sorting-wrapper {
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.toys-header {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .choosed-amount {
+    width: 50px;
+    height: 60px;
+    background-image: url('./assets/images/ball-2.svg');
+    background-size: 48px 60px;
+    background-position: left -8px;
+    background-repeat: no-repeat;
+    transition: .3s;
+    span {
+      display: inline-block;
+      min-width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 4px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      background-color: #278D9F;
+    }
+  }
+  
+}
+
+// search-input
+.search-input {
+  outline: none;
+  width: 380px;
+  height: 30px;
+  padding: 5px 25px;
+  // margin: 10px 0;
+  margin-right: 30px;
+  border-radius: 20px;
+  border: 1px solid #278D9F;
+  color: #fff;
+  font-size: 18px;
+  background-color: rgba(31, 112, 127, .3);
+}
+
+.displaynone {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .filter-box {
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 3px;
+  }
+  .reset-button {
+    font-size: 0.8rem;
+    padding: 2px;
+  }
+  .color-button {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+  }
+  .range-wrapper {
+    flex-direction: column;
+    gap: 3px;
+    font-size: 1rem;
+  }
+  .number-div {
+    width: 20%;
+  }
+  .select__input {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+  }
+  .select__item {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+  .filters__range .filter-span {
+    font-size: 1rem;
+  }
+  .color-button {
+    &.activeFilter::after {
+      top: 0px;
+      left: 3px;
+    }
+  } 
+}

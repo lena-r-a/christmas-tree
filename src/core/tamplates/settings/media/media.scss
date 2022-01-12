@@ -1,0 +1,45 @@
+.media-settings {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.settings-button {
+  box-sizing: border-box;
+  height: 100%;
+  width: 40px;
+  background-color: transparent;
+  border-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: ease-in-out;
+  &.sound-button {
+    background-image: url('../../../../assets/images/audio.svg');
+  }
+  &.snow-button {
+    background-image: url('../../../../assets/images/snowflake.svg');
+  }
+  &:hover {
+    border-color: white;
+    cursor: pointer;
+  }
+  &.active {
+    filter: invert(70%) sepia(13%) saturate(250%) hue-rotate(306deg) brightness(86%) contrast(94%);
+  }
+}
+
+// snowFlakes
+.fa-snowflake {
+	color: #fff;
+	position: absolute;
+	top: -20px;
+	animation: fall linear forwards;
+}
+
+@keyframes fall {
+	to {
+		transform: translateY(105vh);
+	}
+}
